@@ -1,7 +1,19 @@
 import {combineReducers} from 'redux' ; 
-import { ADD_SLOT, CLEAR_SLOT, REMOVE_SLOT, RESET_DATE, SET_DATE, SET_TURF } from '../actions/action-types';
+import { ADD_SLOT, CLEAR_SLOT, LOGOUT, REMOVE_SLOT, RESET_DATE, SET_DATE, SET_TURF } from '../actions/action-types';
 
 const merge = (prev,next) =>(Object.assign({} , prev , next)) 
+
+const userReducer = (state = {},action) => {
+    switch(action.type){
+        
+        case LOGOUT: {
+            return {}
+        }
+        default : {
+            return state
+        }
+    }
+}
 
 const slotReducer = (state = [],action) => {
     switch(action.type){
@@ -50,7 +62,7 @@ const bookingReducer = (state = { turf : "" , date : new Date() , slots : [] , a
 } 
 
 const reducer = combineReducers({
-
+    user : userReducer,
     booking : bookingReducer , 
 
 }) 

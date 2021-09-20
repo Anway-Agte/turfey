@@ -10,7 +10,7 @@ class SlotButton extends React.Component{
         this.state = {
             isSelected : false, 
             timingStart : this.props.timing + ":00" ,
-            timingEnd : this.props.timing + 1
+            timingEnd : this.props.timing + ":00" , 
         }
     } 
 
@@ -35,7 +35,14 @@ class SlotButton extends React.Component{
 
     render(){
         return(
-            <Button style={styles.button} size='medium' backgroundColor={Colors.green50} outline={!this.state.isSelected} outlineColor={Colors.green50} onPress={this.handlePress} label={this.state.timingStart + "-" + this.state.timingEnd + ":00"} />
+            <Button 
+                style={styles.button} 
+                size='medium' 
+                backgroundColor={Colors.green50} 
+                outline={!this.state.isSelected} 
+                outlineColor={Colors.green50} onPress={this.handlePress} 
+                label={this.state.timingStart + "-" + this.state.timingEnd } 
+            />
         )
     }
 

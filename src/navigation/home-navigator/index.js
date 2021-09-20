@@ -1,12 +1,12 @@
 import React from 'react' ; 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs' 
-import HomeScreen from '../../screens/home' ; 
 import Constants from 'expo-constants';
 import { AntDesign } from '@expo/vector-icons';
 import HomeStackNavigator from '../home-stack-navigator/index.js';
 import {HOME,PROFILE_PAGE,SEARCH_PAGE,TURF_PAGE} from '../../constants/route-names'
 import SearchScreen from '../../screens/search';
 import ProfileScreen from '../../screens/profile';
+import { ACTIVE_ICON_COLOR, DEFAULT_BACKGROUND_COLOR } from '../../constants/colors';
 
 const HomeStack = createBottomTabNavigator() ; 
 
@@ -17,9 +17,9 @@ const HomeNavigator = () => {
             sceneContainerStyle={{marginTop : Constants.statusBarHeight}} 
             initialRouteName={HOME}
             tabBarOptions={{
-                activeTintColor : '#3c92e8', 
-                activeBackgroundColor : 'white',
-                inactiveBackgroundColor : 'white',
+                activeTintColor : ACTIVE_ICON_COLOR, 
+                activeBackgroundColor : DEFAULT_BACKGROUND_COLOR,
+                inactiveBackgroundColor : DEFAULT_BACKGROUND_COLOR,
             }}
         >
             <HomeStack.Screen 

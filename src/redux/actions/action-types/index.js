@@ -5,3 +5,7 @@ export const SET_TURF = "SET_TURF" ;
 export const SET_DATE = "SET_DATE" ; 
 export const SET_AMOUNT = "SET_AMOUNT" ; 
 export const RESET_DATE = "RESET_DATE" ; 
+export const SET_USER = "SET_USER" ; 
+export const LOGIN = "LOGIN" ;
+export const SIGNUP = "SIGNUP" ;
+export const LOGOUT = "LOGOUT" ; 

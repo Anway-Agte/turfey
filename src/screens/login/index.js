@@ -10,7 +10,7 @@ class LoginScreen extends React.Component {
             mobile_no : ""
 
         }
-        console.log(props)
+        
     } 
 
     goToSignUp = () => {
