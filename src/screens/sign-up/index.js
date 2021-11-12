@@ -1,7 +1,7 @@
 import React from "react" ;
 import Layout from "../../components/layout";
 import {Text , Button , Colors} from 'react-native-ui-lib' ;
-import { LOGIN } from "../../constants/route-names";
+import { HOME, LOGIN } from "../../constants/route-names";
 import Row from "../../components/row" ; 
 import TextInput from "../../components/text-input";
 import ModalSelector from "react-native-modal-selector";
@@ -17,16 +17,11 @@ class SignUpScreen extends React.Component {
         this.state  = {
             fname : "",
             lname : "" ,
-            mobile_no: "+91 " ,
+            mobile_no: "" ,
             city : "" , 
             pincode : "" ,
             error : "" 
         }
-    }
-
-    shouldComponentUpdate = (nextProps,nextState) => {
-    
-        return nextState.mobile_no.substring(0,5) === this.state.mobile_no.substring(0,5) ; 
     }
 
     getHandler = key => value => {
@@ -40,7 +35,7 @@ class SignUpScreen extends React.Component {
     signUp = () => {
 
         if(this.validateForm()){
-            this.props.navigation.navigate("OTP") ; 
+            this.props.navigation.navigate(HOME) ; 
         }
         
     }
@@ -60,7 +55,7 @@ class SignUpScreen extends React.Component {
             return false
         }
         else if(
-            this.state.mobile_no.length !== 14
+            this.state.mobile_no.length !== 10
         ){
             this.setState({error : "Please enter a 10 digit mobile number"}) ; 
             return false
@@ -72,6 +67,7 @@ class SignUpScreen extends React.Component {
             return false ; 
         }
         else{
+            console.log(+this.state.mobile_no);
             this.setState({error : "" })
             return true 
         }
